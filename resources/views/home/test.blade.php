@@ -15,6 +15,9 @@ Name : {{$name}}<br>
 
 
 ?>
+<br>
+The current UNIX timestamp is {{ time() }}. <br>
+
 <a href="{{route('home')}}">Ana Sayfa</a>
 </body>
 </html>

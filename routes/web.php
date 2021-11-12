@@ -17,6 +17,12 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('home.index', ['name' => 'Berkay Kadamlı']);
 })->name('home');
+
+Route::get('/home2', function () {
+    return view('welcome');
+});
+
+
 Route::redirect('/anasayfa', '/home');
 Route::get('/home', [HomeController::class, 'index']);
 //Route::get('/home/{id}/{name}', [HomeController::class, 'test'])->where(['id'=>'[0-9]*','name'=>'[A-Za-z]+']);
