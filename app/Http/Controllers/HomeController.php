@@ -11,14 +11,14 @@ class HomeController extends Controller
         return view('home.index');
     }
 
-    public function test($id, $name)
+    public function test1($id, $name)
     {
         return view('home.test',['id'=>$id,'name'=>$name]);
 
 
-//        echo "Id : " . $id . "<br> İsim : " . $name;
-//        for ($i = 1; $i <= $id; $i++) {
-//            echo "<br>$i -> $name";
-//        }
+        echo "Id : " . $id . "<br> İsim : " . $name;
+        for ($i = 1; $i <= $id; $i++) {
+            echo "<br>$i -> $name";
+        }
     }
 }

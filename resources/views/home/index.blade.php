@@ -23,20 +23,20 @@
 {{--You are writing in the div. In the main.blade.php see the content yield--}}
 @section('content')
     @parent
-    <ul>
-        <li>bilgisayar</li>
-        <li>Elektronik</li>
-        <li>Ev Eşyaları</li>
-
-    </ul>
-
-    <div class="col-sm-4">
-
-        <h3>Column 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-
-    </div>
+    <table border="1" width="600">
+        <tr>
+            <th>Id</th>
+            <th>Ad Soyad</th>
+            <th>Bölüm</th>
+        </tr>
+        @foreach($datalist as $list)
+            <tr>
+                <td>{{$list->Id}}</td>
+                <td>{{$list->AdSoyad}}</td>
+                <td>{{$list->Bolum}}</td>
+            </tr>
+        @endforeach
+    </table>
 @endsection
 
 
