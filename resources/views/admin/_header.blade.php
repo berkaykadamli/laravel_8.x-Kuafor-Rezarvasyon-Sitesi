@@ -61,7 +61,7 @@
                             <i class="fas fa-copy"></i>Pages</a>
                         <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                             <li>
-                                <a href="login.html">Login</a>
+                                <a href="login.blade.php">Login</a>
                             </li>
                             <li>
                                 <a href="register.html">Register</a>
