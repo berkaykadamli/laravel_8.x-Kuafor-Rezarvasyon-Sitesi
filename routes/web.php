@@ -22,17 +22,17 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/admin/login',[\App\Http\Controllers\Admin\AdminController::class,'login'])->name('adminLogin');
-Route::get('/admin',[\App\Http\Controllers\Admin\AdminController::class,'index'])->name('admin');
+Route::get('/admin/login',[\App\Http\Controllers\Admin\AdminController::class,'login'])->name('admin_login');
+Route::get('/admin',[\App\Http\Controllers\Admin\AdminController::class,'index'])->name('admin_home');
 
-Route::get('/admin/logout',[\App\Http\Controllers\Admin\AdminController::class,'logout'])->name('adminLogout');
-Route::post('/admin/loginCheck',[\App\Http\Controllers\Admin\AdminController::class,'loginCheck'])->name('adminLoginCheck');
+Route::get('/admin/logout',[\App\Http\Controllers\Admin\AdminController::class,'logout'])->name('admin_logout');
+Route::post('/admin/loginCheck',[\App\Http\Controllers\Admin\AdminController::class,'loginCheck'])->name('admin_login_check');
 
 
 
 //SİLİNECEK
 Route::get('category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
-Route::get('category/add',[\App\Http\Controllers\Admin\CategoryController::class,'add'])->name('admin_categoryAdd');
+Route::get('category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_add');
 Route::get('category/update',[\App\Http\Controllers\Admin\CategoryController::class,'update'])->name('admin_category_update');
 Route::get('category/delete',[\App\Http\Controllers\Admin\CategoryController::class,'destroy'])->name('admin_category_delete');
 Route::get('category/show',[\App\Http\Controllers\Admin\CategoryController::class,'show'])->name('admin_category_show');
@@ -45,7 +45,7 @@ Route::get('category/show',[\App\Http\Controllers\Admin\CategoryController::clas
 //Route::middleware('auth')->prefix('admin')->group(function (){
 //    Route::get('/',[\App\Http\Controllers\Admin\AdminController::class,'index'])->name('admin_home');
 //    Route::get('category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
-//    Route::get('category/add',[\App\Http\Controllers\Admin\CategoryController::class,'add'])->name('admin_categoryAdd');
+//    Route::get('category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_add');
 //    Route::get('category/update',[\App\Http\Controllers\Admin\CategoryController::class,'update'])->name('admin_category_update');
 //    Route::get('category/delete',[\App\Http\Controllers\Admin\CategoryController::class,'destroy'])->name('admin_category_delete');
 //    Route::get('category/show',[\App\Http\Controllers\Admin\CategoryController::class,'show'])->name('admin_category_show');

@@ -41,10 +41,10 @@
 <div class="page-wrapper">
 @include('admin._header')
 @include('admin._sidebar')
-@section('content')
-@endsection
+@yield('content')
 @include('admin._footer')
 @yield('footer')
+</div>
 </body>
 
 </html>
