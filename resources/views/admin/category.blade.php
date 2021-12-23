@@ -12,6 +12,12 @@
                                 <i class="mr-2 fa fa-align-justify"></i>
                                 <strong class="card-title" v-if="headerText">Category List</strong>
                             </div>
+                            <hr>
+
+                            <a href="{{route('admin_category_add')}}" style="width: 200px;" type="button"
+                               class="btn btn-block btn-info">Add Category</a>
+
+
                             <div class="card-body">
                                 <div class="table-responsive m-b-40">
                                     <table class="table table-borderless table-data3">
@@ -27,15 +33,24 @@
                                         </thead>
                                         <tbody>
                                         @foreach($datalist as $db)
-                                        <tr>
-                                            <td>{{$db->id}}</td>
-                                            <td>{{$db->parent_id}}</td>
-                                            <td>{{$db->title}}</td>
-                                            <td>{{$db->status}}</td>
-                                            <td>Edit</td>
-                                            <td>Delete</td>
+                                            <tr>
+                                                <td>{{$db->id}}</td>
+                                                <td>{{$db->parent_id}}</td>
+                                                <td>{{$db->title}}</td>
+                                                <td>{{$db->status}}</td>
+                                                <td>
+                                                    <a href="{{route('admin_category_edit',['id'=>$db->id])}}"
+                                                       class="btn btn-outline-success">Edit
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a
+                                                        href="{{route('admin_category_delete',['id'=>$db->id])}}"
+                                                        class="btn btn-outline-danger"
+                                                        onclick="return confirm('Are You Sure ?')">Delete</a>
+                                                </td>
 
-                                        </tr>
+                                            </tr>
                                         @endforeach
                                         </tbody>
                                     </table>
