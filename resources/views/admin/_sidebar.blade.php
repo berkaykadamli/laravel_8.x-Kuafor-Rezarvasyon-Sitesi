@@ -7,12 +7,6 @@
 
         </a>
     </div>
-    <div class="info">
-        @auth
-            <a href="#" class="d-block">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
-            <a href="{{route('admin_logout')}}" class="d-block">Logout</a>
-        @endauth
-    </div>
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
@@ -30,8 +24,8 @@
                         <i class="far fa-check-square"></i>Category</a>
                 </li>
                 <li>
-                    <a href="calendar.html">
-                        <i class="fas fa-calendar-alt"></i>Calendar</a>
+                    <a href="{{route('admin_service')}}">
+                        <i class="fas fa-calendar-alt"></i>Services</a>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">

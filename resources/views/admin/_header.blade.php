@@ -248,48 +248,51 @@
                             </div>
                         </div>
                         <div class="account-wrap">
-                            <div class="account-item clearfix js-item-menu">
-                                <div class="image">
-                                    <img src="{{asset('assets')}}/admin/images/icon/avatar-01.jpg" alt="John Doe"/>
-                                </div>
-                                <div class="content">
-                                    <a class="js-acc-btn" href="#">john doe</a>
-                                </div>
-                                <div class="account-dropdown js-dropdown">
-                                    <div class="info clearfix">
-                                        <div class="image">
-                                            <a href="#">
-                                                <img src="{{asset('assets')}}/admin/images/icon/avatar-01.jpg"
-                                                     alt="John Doe"/>
-                                            </a>
+                            @auth()
+                                <div class="account-item clearfix js-item-menu">
+                                    <div class="image">
+                                        <img src="{{\Illuminate\Support\Facades\Auth::user()->profile_photo_path}}" alt="{{\Illuminate\Support\Facades\Auth::user()->name}}"/>
+                                    </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" href="#">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
+                                        <div class="info clearfix">
+                                            <div class="image">
+                                                <a href="#">
+                                                    <img src="{{\Illuminate\Support\Facades\Auth::user()->profile_photo_path}}"
+                                                         alt="{{\Illuminate\Support\Facades\Auth::user()->name}}"/>
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="name">
+                                                    <a href="#">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
+                                                </h5>
+                                                <span
+                                                    class="email">{{\Illuminate\Support\Facades\Auth::user()->email}}</span>
+                                            </div>
                                         </div>
-                                        <div class="content">
-                                            <h5 class="name">
-                                                <a href="#">john doe</a>
-                                            </h5>
-                                            <span class="email">johndoe@example.com</span>
+                                        <div class="account-dropdown__body">
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-account"></i>Account</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-settings"></i>Setting</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__footer">
+                                            <a href="{{route('admin_logout')}}">
+                                                <i class="zmdi zmdi-power"></i>Logout</a>
                                         </div>
                                     </div>
-                                    <div class="account-dropdown__body">
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-account"></i>Account</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-settings"></i>Setting</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                        </div>
-                                    </div>
-                                    <div class="account-dropdown__footer">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-power"></i>Logout</a>
-                                    </div>
                                 </div>
-                            </div>
+                            @endauth
                         </div>
                     </div>
                 </div>

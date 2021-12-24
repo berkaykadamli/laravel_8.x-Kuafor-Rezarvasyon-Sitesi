@@ -12,12 +12,14 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view("admin.index");
+        $user=DB::table('users')->get();
+        return view("admin.index",['user'=>$user]);
     }
 
     public function login(){
         return view("admin.login");
     }
+
     public function loginCheck(Request $request){
         if($request->isMethod('post')){
             $credentials=$request->only('email','password');

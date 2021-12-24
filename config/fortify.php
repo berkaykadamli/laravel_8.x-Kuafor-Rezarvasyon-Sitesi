@@ -52,7 +52,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | home Path
+    | Home Path
     |--------------------------------------------------------------------------
     |
     | Here you may configure the path where users will get redirected during

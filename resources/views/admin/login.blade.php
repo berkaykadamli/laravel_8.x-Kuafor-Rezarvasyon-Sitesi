@@ -46,7 +46,7 @@
                                 <img src="https://img.icons8.com/external-konkapp-detailed-outline-konkapp/64/000000/external-login-work-from-home-konkapp-detailed-outline-konkapp.png"/>                            </a>
                         </div>
                         <div class="login-form">
-                            <form action="{{route('adminLoginCheck')}}" method="post">
+                            <form action="{{route('admin_login_check')}}" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label>Email Address</label>
@@ -64,7 +64,7 @@
                                         <a href="#">Forgotten Password?</a>
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Sign in</button>
                                 <div class="social-login-content">
                                     <div class="social-button">
                                         <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
