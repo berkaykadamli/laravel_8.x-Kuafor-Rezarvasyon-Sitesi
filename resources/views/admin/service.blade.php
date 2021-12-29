@@ -38,7 +38,12 @@
                                             <tr>
                                                 <td>{{$db->id}}</td>
                                                 <td>{{$db->category_id}}</td>
-                                                <td>{{$db->image}}</td>
+                                                <td>
+                                                    @if($db->image)
+                                                        <img src="{{\Illuminate\Support\Facades\Storage::url($db->image)}}" height="50%" width="50%"
+                                                             alt="{{$db->title}}">
+                                                    @endif
+                                                </td>
                                                 <td>{{$db->title}}</td>
                                                 <td>{{$db->price}}</td>
                                                 <td>{{$db->status}}</td>

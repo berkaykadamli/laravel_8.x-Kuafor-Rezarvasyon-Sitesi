@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Service;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 
 class ServiceController extends Controller
@@ -43,24 +47,13 @@ class ServiceController extends Controller
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
-        $data->image = $request->input('image');
+        $data->image = Storage::putFile('images',$request->file('image'));
         $data->detail = $request->input('detail');
         $data->price = $request->input('price');
         $data->status = $request->input('status');
         $data->save();
 
 
-
-//        DB::table('services')->insert([
-//            'category_id' => $request->input('category_id'),
-//            'title' => $request->input('title'),
-//            'keywords' => $request->input('keywords'),
-//            'description' => $request->input('description'),
-//            'image' => $request->input('image'),
-//            'detail' => $request->input('detail'),
-//            'price' => $request->input('price'),
-//            'status' => $request->input('status')
-//        ]);
 
         return redirect()->route('admin_service');
     }
@@ -82,9 +75,11 @@ class ServiceController extends Controller
      * @param \App\Models\Service $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Service $service)
+    public function edit(Service $service,$id)
     {
-        //
+        $data = Service::find($id);
+        $datalist = Category::all();
+        return view('admin.service_edit', ['data' => $data, 'datalist' => $datalist]);
     }
 
     /**
@@ -94,9 +89,19 @@ class ServiceController extends Controller
      * @param \App\Models\Service $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Service $service)
+    public function update(Request $request, Service $service,$id)
     {
-        //
+        $data = Service::find($id);
+        $data->title = $request->input('title');
+        $data->keywords = $request->input('keywords');
+        $data->description = $request->input('description');
+        $data->image = Storage::putFile('images',$request->file('image'));
+        $data->category_id = $request->input('category_id');
+        $data->detail = $request->input('detail');
+        $data->price = $request->input('price');
+        $data->status = $request->input('status');
+        $data->save();
+        return redirect()->route('admin_service');
     }
 
     /**
@@ -105,8 +110,9 @@ class ServiceController extends Controller
      * @param \App\Models\Service $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Service $service)
+    public function destroy(Service $service,$id)
     {
-        //
+        DB::table('services')->where('id', "=", $id)->delete();
+        return redirect()->route('admin_service');
     }
 }
