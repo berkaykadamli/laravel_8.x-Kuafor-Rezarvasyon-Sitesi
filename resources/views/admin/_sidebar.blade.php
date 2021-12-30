@@ -1,9 +1,8 @@
-
 <!-- MENU SIDEBAR-->
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo">
         <a href="{{route('admin_home')}}">
-            <img src="{{asset('assets')}}/admin/images/icon/logo.png" alt="Cool Admin" />
+            <img src="{{asset('assets')}}/admin/images/icon/logo.png" alt="Cool Admin"/>
 
         </a>
     </div>
@@ -26,6 +25,10 @@
                 <li>
                     <a href="{{route('admin_service')}}">
                         <i class="fas fa-calendar-alt"></i>Services</a>
+                </li>
+                <li>
+                    <a href="{{route('admin_setting')}}">
+                        <i class="fas fa-calendar-alt"></i>Settings</a>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
