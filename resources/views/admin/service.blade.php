@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title','Service List')
-
+@section('')
 @section('content')
     <div class="main-content">
         <div class="section__content section__content--p30">
@@ -26,6 +26,7 @@
                                             <th>Id</th>
                                             <th>Category</th>
                                             <th>Image</th>
+                                            <th>Image Gallery</th>
                                             <th>Title(s)</th>
                                             <th>Price</th>
                                             <th>Status</th>
@@ -40,10 +41,15 @@
                                                 <td>{{$db->category_id}}</td>
                                                 <td>
                                                     @if($db->image)
-                                                        <img src="{{\Illuminate\Support\Facades\Storage::url($db->image)}}" height="50%" width="50%"
-                                                             alt="{{$db->title}}">
+                                                        <img
+                                                            src="{{\Illuminate\Support\Facades\Storage::url($db->image)}}"
+                                                            height="50%" width="50%"
+                                                            alt="{{$db->title}}">
                                                     @endif
                                                 </td>
+                                                <td><a href="{{route('admin_image_add',['id'=>$db->id])}}"
+                                                       onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=7000')">
+                                                        Gallery</a></td>
                                                 <td>{{$db->title}}</td>
                                                 <td>{{$db->price}}</td>
                                                 <td>{{$db->status}}</td>
