@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('title','Service List')
-@section('')
 @section('content')
     <div class="main-content">
         <div class="section__content section__content--p30">
@@ -38,7 +37,7 @@
                                         @foreach($datalist as $db)
                                             <tr>
                                                 <td>{{$db->id}}</td>
-                                                <td>{{$db->category_id}}</td>
+                                                <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($db->category,$db->category->title)}}</td>
                                                 <td>
                                                     @if($db->image)
                                                         <img

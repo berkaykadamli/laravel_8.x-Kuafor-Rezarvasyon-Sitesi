@@ -35,7 +35,7 @@
                                         @foreach($datalist as $db)
                                             <tr>
                                                 <td>{{$db->id}}</td>
-                                                <td>{{$db->parent_id}}</td>
+                                                <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($db,$db->title)}}</td>
                                                 <td>{{$db->title}}</td>
                                                 <td>{{$db->status}}</td>
                                                 <td>

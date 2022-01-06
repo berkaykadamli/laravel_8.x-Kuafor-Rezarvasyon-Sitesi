@@ -25,7 +25,7 @@
                                                 <select class="form-control select2" name="parent_id" style="width: 100%;">
                                                     <option value="0" selected="selected">Main Category</option>
                                                     @foreach($datalist as $db)
-                                                        <option value="{{$db->id}}">{{$db->title}}</option>
+                                                        <option value="{{$db->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($db,$db->title)}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

@@ -27,7 +27,7 @@
                                                     <option value="0">Main Category</option>
                                                     @foreach($datalist as $db)
                                                         <option value="{{$db->id}}"
-                                                                @if ($db->id  == $data->parent_id) selected="selected" @endif >{{$db->title}}</option>
+                                                                @if ($db->id  == $data->parent_id) selected="selected" @endif >{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($db,$db->title)}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

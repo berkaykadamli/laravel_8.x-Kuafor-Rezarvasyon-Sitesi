@@ -2,23 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+
+    public static function categoryList()
+    {
+        return Category::where('parent_id', '=', 0)->with('children')->get();
+    }
+
     public function index()
     {
-        return view('layouts.main');
+        return view('home.index');
     }
 
-    public function test1($id, $name)
+    public function login()
     {
-        return view('home.test',['id'=>$id,'name'=>$name]);
-
-
-        echo "Id : " . $id . "<br> İsim : " . $name;
-        for ($i = 1; $i <= $id; $i++) {
-            echo "<br>$i -> $name";
-        }
+        return view('admin.login');
     }
+
+
 }
