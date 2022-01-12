@@ -6,9 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>@yield('title')</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
+    <meta content="@yield('description')" name="description">
+    <meta content="@yield('author')" name="keywords">
     <!-- Favicons -->
     <link href="{{asset('assets')}}/home//img/favicon.png" rel="icon">
     <link href="{{asset('assets')}}/home/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -41,8 +40,7 @@
 <body>
 
 @include('home._header')
-@include('home._hero')
-@include('home._content')
+@yield('content')
 @include('home._footer')
 
 </body>

@@ -204,16 +204,17 @@
                                                 </p>
                                             </div>
                                         </div>
+                                        <div>
+                                            <button id="payment-button" type="submit"
+                                                    class="btn btn-lg btn-info ">
+                                                <span id="payment-button-amount">Update Setting</span>
+                                                <span id="payment-button-sending"
+                                                      style="display:none;">Sending…</span>
+                                            </button>
+                                        </div>
                                     </form>
                                 </div>
-                                <div>
-                                    <button id="payment-button" type="submit"
-                                            class="btn btn-lg btn-info ">
-                                        <span id="payment-button-amount">Update Setting</span>
-                                        <span id="payment-button-sending"
-                                              style="display:none;">Sending…</span>
-                                    </button>
-                                </div>
+
                             </div>
                         </div>
                     </div>

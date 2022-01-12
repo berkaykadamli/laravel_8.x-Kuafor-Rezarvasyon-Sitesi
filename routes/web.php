@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -19,7 +20,9 @@ use App\Http\Controllers\HomeController;
 //});
 
 
-Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+Route::get('/about', [HomeController::class, 'aboutus'])->name('about');
 // Admin Login
 Route::get('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'login'])->name('admin_login');
 Route::get('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin_home');
@@ -65,16 +68,24 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     #Settings
     Route::prefix('setting')->group(function () {
         Route::get('/', [\App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
-
         Route::post('update/{id}', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
-
     });
 });
 
-
-
+Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('profile');
+});
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return redirect()->route('home');
+});
+
+Route::get('/dash', function () {
     return view('dashboard');
 })->name('dashboard');
+
+// Gerçek Jetstream login
+//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//    return view('dashboard');
+//})->name('dashboard');
