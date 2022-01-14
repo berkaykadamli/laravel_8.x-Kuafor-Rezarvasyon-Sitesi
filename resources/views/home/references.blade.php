@@ -3,7 +3,7 @@
 @endphp
 @extends('layouts.home')
 
-@section('title','About Us - ',$setting->title)
+@section('title','References - ',$setting->title)
 @section('description'){{$setting->description}}@endsection
 
 @section('author',$setting->company)
@@ -15,10 +15,10 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>About Us</h2>
+                    <h2>References</h2>
                     <ol>
                         <li><a href="{{route('home')}}">Home</a></li>
-                        <li>About Us</li>
+                        <li>References</li>
                     </ol>
                 </div>
 
@@ -28,7 +28,7 @@
         <section class="inner-page">
             <div class="container">
                 <p>
-                    {!! $setting->aboutus !!}
+                    {!! $setting->references !!}
                 </p>
             </div>
         </section>

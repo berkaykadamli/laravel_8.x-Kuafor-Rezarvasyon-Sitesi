@@ -5,7 +5,7 @@
 
 
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top ">
+<header id="header"  class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
         <h1 class="logo"><a href="{{route('home')}}">{{$setting->title}}</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
@@ -18,9 +18,10 @@
                 <li><a class="nav-link scrollto" href="#services">Services</a></li>
                 <li><a class="nav-link scrollto " href="#pricing">Pricing</a></li>
                 @include('home._category')
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="{{route('contact')}}">Contact</a></li>
                 <li><a class="nav-link scrollto" href="{{route('faq')}}">Faq</a></li>
                 <li><a class="nav-link scrollto" href="{{route('about')}}">About Us</a></li>
+                <li><a class="nav-link scrollto" href="{{route('references')}}">References</a></li>
 
                 @if(\Illuminate\Support\Facades\Auth::check())
                     <li class="dropdown"><a href="#"><span>{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
