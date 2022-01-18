@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -26,6 +27,12 @@ Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/about', [HomeController::class, 'aboutus'])->name('about');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/getservices', [HomeController::class, 'getservice'])->name('getservices');
+
+Route::get('/categoryproduct/{id}', [HomeController::class, 'categoryproduct'])->name('categoryproduct');
+Route::get('/servicedetail/{id}', [HomeController::class, 'servicedetail'])->name('servicedetail');
+Route::get('/serviceimageslider/{id}', [HomeController::class, 'serviceimageslider'])->name('serviceimageslider');
+
 Route::post('/sendmessage', [HomeController::class, 'sendMessage'])->name('sendmessage');
 // Admin Login
 Route::get('/admin/login', [\App\Http\Controllers\Admin\AdminController::class, 'login'])->name('admin_login');
@@ -84,10 +91,23 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/', [\App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
         Route::post('update/{id}', [\App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
     });
+
+
+
+    //Review
+    Route::prefix('review')->group(function () {
+        Route::get('/', [ReviewController::class, 'index'])->name('admin_review');
+        Route::get('show/{id}', [ReviewController::class, 'show'])->name('admin_review_show');
+        Route::post('update/{id}', [ReviewController::class, 'update'])->name('admin_review_update');
+        Route::get('delete/{id}', [ReviewController::class, 'destroy'])->name('admin_review_delete');
+
+    });
 });
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('profile');
+    Route::get('/myreviews', [UserController::class, 'myreviews'])->name('myreviews');
+    Route::get('/destroyviews/{id}', [UserController::class, 'destroyviews'])->name('destroyview_delet');
 });
 
 

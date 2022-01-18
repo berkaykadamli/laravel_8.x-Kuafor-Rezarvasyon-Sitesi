@@ -37,7 +37,9 @@
                                         @foreach($datalist as $db)
                                             <tr>
                                                 <td>{{$db->id}}</td>
-                                                <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($db->category,$db->category->title)}}</td>
+                                                <td>{{$db->category_id}}</td>
+
+{{--                                                <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($db->category_id,$db->title)}}</td>--}}
                                                 <td>
                                                     @if($db->image)
                                                         <img

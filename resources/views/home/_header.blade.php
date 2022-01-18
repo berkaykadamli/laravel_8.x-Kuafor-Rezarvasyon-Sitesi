@@ -5,7 +5,7 @@
 
 
 <!-- ======= Header ======= -->
-<header id="header"  class="fixed-top header-inner-pages">
+<header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
         <h1 class="logo"><a href="{{route('home')}}">{{$setting->title}}</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
@@ -13,6 +13,20 @@
 
         <nav id="navbar" class="navbar">
             <ul>
+                <li>
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+
+                        <form action="{{route('getservices')}}" method="post">
+                            @csrf
+                            @livewire('search')
+                            <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+                        </form>
+
+
+                        @livewireScripts
+
+                    </div>
+                </li>
                 <li><a class="nav-link scrollto " href="{{route('home')}}">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
                 <li><a class="nav-link scrollto" href="#services">Services</a></li>

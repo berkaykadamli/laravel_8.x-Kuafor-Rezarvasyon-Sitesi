@@ -20,7 +20,8 @@ class ServiceController extends Controller
     public function index()
     {
         $datalist = Service::all();
-        return view('admin.service', ['datalist' => $datalist]);
+        $one = Service::first();
+        return view('admin.service', ['datalist' => $datalist,'one'=>$one]);
     }
 
     /**
@@ -31,7 +32,9 @@ class ServiceController extends Controller
     public function create()
     {
         $datalist=Service::all();
-        return view('admin.service_add',['datalist'=>$datalist]);
+        $datalistC = Category::all();
+
+        return view('admin.service_add',['datalist'=>$datalist,'categoryList'=>$datalistC]);
     }
 
     /**
@@ -42,7 +45,7 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new Service;
+        $data = new Service();
         $data->category_id = $request->input('category_id');
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');
@@ -52,9 +55,6 @@ class ServiceController extends Controller
         $data->price = $request->input('price');
         $data->status = $request->input('status');
         $data->save();
-
-
-
         return redirect()->route('admin_service');
     }
 
@@ -91,6 +91,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service,$id)
     {
+//        $data=DB::table('services')->find($id);
         $data = Service::find($id);
         $data->title = $request->input('title');
         $data->keywords = $request->input('keywords');

@@ -152,38 +152,9 @@
                                 <span class="quantity">1</span>
                                 <div class="email-dropdown js-dropdown">
                                     <div class="email__title">
-                                        <p>You have 3 New Emails</p>
+                                        <p></p>
                                     </div>
-                                    <div class="email__item">
-                                        <div class="image img-cir img-40">
-                                            <img src="{{asset('assets')}}/admin/images/icon/avatar-06.jpg"
-                                                 alt="Cynthia Harvey"/>
-                                        </div>
-                                        <div class="content">
-                                            <p>Meeting about new dashboard...</p>
-                                            <span>Cynthia Harvey, 3 min ago</span>
-                                        </div>
-                                    </div>
-                                    <div class="email__item">
-                                        <div class="image img-cir img-40">
-                                            <img src="{{asset('assets')}}/admin/images/icon/avatar-05.jpg"
-                                                 alt="Cynthia Harvey"/>
-                                        </div>
-                                        <div class="content">
-                                            <p>Meeting about new dashboard...</p>
-                                            <span>Cynthia Harvey, Yesterday</span>
-                                        </div>
-                                    </div>
-                                    <div class="email__item">
-                                        <div class="image img-cir img-40">
-                                            <img src="{{asset('assets')}}/admin/images/icon/avatar-04.jpg"
-                                                 alt="Cynthia Harvey"/>
-                                        </div>
-                                        <div class="content">
-                                            <p>Meeting about new dashboard...</p>
-                                            <span>Cynthia Harvey, April 12,,2018</span>
-                                        </div>
-                                    </div>
+
                                     <div class="email__footer">
                                         <a href="#">See all emails</a>
                                     </div>
@@ -233,17 +204,20 @@
                             @auth()
                                 <div class="account-item clearfix js-item-menu">
                                     <div class="image">
-                                        <img src="{{\Illuminate\Support\Facades\Auth::user()->profile_photo_path}}" alt="{{\Illuminate\Support\Facades\Auth::user()->name}}"/>
+                                        <img src="{{\Illuminate\Support\Facades\Auth::user()->profile_photo_path}}"
+                                             alt="{{\Illuminate\Support\Facades\Auth::user()->name}}"/>
                                     </div>
                                     <div class="content">
-                                        <a class="js-acc-btn" href="#">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
+                                        <a class="js-acc-btn"
+                                           href="#">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
                                     </div>
                                     <div class="account-dropdown js-dropdown">
                                         <div class="info clearfix">
                                             <div class="image">
                                                 <a href="#">
-                                                    <img src="{{\Illuminate\Support\Facades\Auth::user()->profile_photo_path}}"
-                                                         alt="{{\Illuminate\Support\Facades\Auth::user()->name}}"/>
+                                                    <img
+                                                        src="{{\Illuminate\Support\Facades\Auth::user()->profile_photo_path}}"
+                                                        alt="{{\Illuminate\Support\Facades\Auth::user()->name}}"/>
                                                 </a>
                                             </div>
                                             <div class="content">

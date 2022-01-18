@@ -54,21 +54,12 @@
                                 <input type="text" class="form-control" name="subject" id="subject"
                                        placeholder="Subject" required>
                             </div>
-
                             <div class="form-group mt-3">
                                 <input type="text" class="form-control" name="phone" id="subject" placeholder="Phone"
                                        required>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="status" id="subject" placeholder="Status"
-                                       required>
-                            </div>
-                            <div class="form-group mt-3">
                                 <textarea class="form-control" name="message" rows="5" placeholder="Message"
-                                          required></textarea>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="note" rows="5" placeholder="Note"
                                           required></textarea>
                             </div>
 

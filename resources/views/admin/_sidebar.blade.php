@@ -28,7 +28,15 @@
                 </li>
                 <li>
                     <a href="{{route('admin_setting')}}">
-                        <i class="fas fa-calendar-alt"></i>Settings</a>
+                        <i class="fas fa-server"></i>Settings</a>
+                </li>
+                <li>
+                    <a href="{{route('admin_message')}}">
+                        <i class="fas fa-calendar-plus"></i>All Messages</a>
+                </li>
+                <li>
+                    <a href="{{route('admin_review')}}">
+                        <i class="fas fa-address-card"></i>Review</a>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">

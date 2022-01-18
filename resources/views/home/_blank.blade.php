@@ -1,3 +1,7 @@
+@php
+    $parentCategories= \App\Http\Controllers\HomeController::categoryList();
+        $setting = \App\Http\Controllers\HomeController::getSetting();
+@endphp
 @extends('layouts.home')
 
 @section('title','User Profile')
