@@ -34,6 +34,7 @@ class HomeController extends Controller
         $setting = Setting::first();
         $slider = Service::select('title', 'image', 'price')->limit(4)->get();
 
+
         return view('home.index', ['setting' => $setting, 'slider' => $slider]);
     }
 

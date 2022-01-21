@@ -1,17 +1,27 @@
 <main id="main">
-
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
 
         <div class="container-fluid" data-aos="fade-up">
             <div class="row justify-content-center">
-                <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                <div
+                    class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
                     <h1>Kuaför Rezervasyon Sistemi</h1>
                     <h2>Sizler için en iyi ve hızlısını düşünüyoruz.</h2>
                     <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
                 </div>
                 <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
-                    <img src="{{asset('assets')}}/home/img/home-woman.jpg" class="img-fluid animated" alt="">
+                        <div class="portfolio-details-slider swiper">
+                            <div class="swiper-wrapper align-items-center">
+                                @foreach($slider as $img)
+                                    <div class="swiper-slide">
+                                        <img src="{{\Illuminate\Support\Facades\Storage::url($img->image)}}"
+                                            alt="" style="height: auto">
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -117,7 +127,8 @@
                     <div class="icon-box iconbox-blue">
                         <div class="icon">
                             <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"></path>
+                                <path stroke="none" stroke-width="0" fill="#f5f5f5"
+                                      d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"></path>
                             </svg>
                             <i class="bx bx-layer"></i>
                         </div>
@@ -709,7 +720,7 @@
 {{--        </div>--}}
 {{--    </section><!-- End Frequently Asked Questions Section -->--}}
 
-    <!-- ======= Contact Section ======= -->
+<!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section-bg">
         <div class="container" data-aos="fade-up">
 

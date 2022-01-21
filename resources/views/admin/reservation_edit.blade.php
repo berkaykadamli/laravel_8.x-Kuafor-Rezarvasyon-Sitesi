@@ -34,7 +34,7 @@
 
                                         <form action="{{route('admin_reservation_update',['id'=>$data->id])}}"
                                               method="post"
-                                              novalidate="novalidate"  enctype="multipart/form-data">
+                                              novalidate="novalidate" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
                                                 <label class="control-label mb-1">Parent Id</label>
@@ -60,13 +60,9 @@
 
                                             <div class="form-group">
                                                 <label class="control-label mb-1">Detail</label>
-                                                <textarea id="summernote" readonly name="detail">{{$data->detail}}</textarea>
-                                                <script>
-                                                    $('#summernote').summernote({
-                                                        tabsize: 2,
-                                                        height: 100
-                                                    });
-                                                </script>
+                                                <input name="detail" type="text" value="{!! $data->detail !!}"
+                                                       class="form-control" readonly>
+
                                             </div>
 
 
