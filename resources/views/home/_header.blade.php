@@ -38,10 +38,10 @@
                 <li><a class="nav-link scrollto" href="{{route('references')}}">References</a></li>
 
                 @if(\Illuminate\Support\Facades\Auth::check())
-                    <li class="dropdown"><a href="#"><span>{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
+                    <li class="dropdown"><a href="#"><span>{{\Illuminate\Support\Facades\Auth::user()->name}} </span>
                             <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li class="dropdown"><a href="{{route('profile')}}"><span>My Account</span></a>
+                            <li class="dropdown"><a href="{{route('profile')}}"><span>My Account  </span></a>
                             <li class="dropdown"><a href="{{route('admin_logout')}}"><span>Logout</span></a>
                         </ul>
                 @else

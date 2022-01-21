@@ -46,6 +46,7 @@
                                 <img src="https://img.icons8.com/external-konkapp-detailed-outline-konkapp/64/000000/external-login-work-from-home-konkapp-detailed-outline-konkapp.png"/>                            </a>
                         </div>
                         <div class="login-form">
+                            @include('home.message')
                             <form action="{{route('admin_login_check')}}" method="post">
                                 @csrf
                                 <div class="form-group">

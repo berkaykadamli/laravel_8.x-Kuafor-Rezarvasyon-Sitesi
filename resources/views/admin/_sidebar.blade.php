@@ -38,6 +38,14 @@
                     <a href="{{route('admin_review')}}">
                         <i class="fas fa-address-card"></i>Review</a>
                 </li>
+                <li>
+                    <a href="{{route('admin_reservation')}}">
+                        <i class="fas fa-angular"></i>Reservation</a>
+                </li>
+                <li>
+                    <a href="{{route('admin_user')}}">
+                        <i class="fas fa-search"></i>Users</a>
+                </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-copy"></i>Pages</a>

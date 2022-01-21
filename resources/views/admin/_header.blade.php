@@ -201,6 +201,7 @@
                             </div>
                         </div>
                         <div class="account-wrap">
+                            @include('home.message')
                             @auth()
                                 <div class="account-item clearfix js-item-menu">
                                     <div class="image">

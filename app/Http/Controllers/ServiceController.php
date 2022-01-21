@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-
 
 class ServiceController extends Controller
 {
@@ -19,9 +18,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $datalist = Service::where('user_id','=',null)->get();
-        $one = Service::first();
-        return view('admin.service', ['datalist' => $datalist,'one'=>$one]);
+        $datalist = Service::where('user_id',Auth::id())->get();
+        return view('home.user_service', ['datalist' => $datalist]);
     }
 
     /**
@@ -34,7 +32,7 @@ class ServiceController extends Controller
         $datalist=Service::all();
         $datalistC = Category::all();
 
-        return view('admin.service_add',['datalist'=>$datalist,'categoryList'=>$datalistC]);
+        return view('home.user_service_add',['datalist'=>$datalist,'categoryList'=>$datalistC]);
     }
 
     /**
@@ -48,14 +46,11 @@ class ServiceController extends Controller
         $data = new Service();
         $data->category_id = $request->input('category_id');
         $data->title = $request->input('title');
-        $data->keywords = $request->input('keywords');
         $data->description = $request->input('description');
-        $data->image = Storage::putFile('images',$request->file('image'));
         $data->detail = $request->input('detail');
-        $data->price = $request->input('price');
-        $data->status = $request->input('status');
+        $data->user_id=Auth::id();
         $data->save();
-        return redirect()->route('admin_service');
+        return redirect()->route('myaccount_service');
     }
 
     /**
@@ -79,7 +74,7 @@ class ServiceController extends Controller
     {
         $data = Service::find($id);
         $datalist = Category::all();
-        return view('admin.service_edit', ['data' => $data, 'datalist' => $datalist]);
+        return view('home.user_service_edit', ['data' => $data, 'datalist' => $datalist]);
     }
 
     /**
@@ -102,7 +97,7 @@ class ServiceController extends Controller
         $data->price = $request->input('price');
         $data->status = $request->input('status');
         $data->save();
-        return redirect()->route('admin_service');
+        return redirect()->route('myaccount_service');
     }
 
     /**
@@ -114,6 +109,6 @@ class ServiceController extends Controller
     public function destroy(Service $service,$id)
     {
         DB::table('services')->where('id', "=", $id)->delete();
-        return redirect()->route('admin_service');
+        return redirect()->route('myaccount_service');
     }
 }
