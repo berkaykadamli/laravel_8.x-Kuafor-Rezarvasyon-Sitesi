@@ -23,6 +23,7 @@
                                         <thead>
                                         <tr>
                                             <th>Id</th>
+                                            <th>User Name</th>
                                             <th>Category</th>
                                             <th>Title(s)</th>
                                             <th>Status</th>
@@ -34,6 +35,7 @@
                                         @foreach($datalist as $db)
                                             <tr>
                                                 <td>{{$db->id}}</td>
+                                                <td>{{$db->user->name}}</td>
                                                 <td>{{$db->category->title}}</td>
 
 {{--                                                <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($db->category_id,$db->title)}}</td>--}}

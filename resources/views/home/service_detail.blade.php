@@ -64,13 +64,15 @@
                             @foreach($reviews as $rs)
                                 <div class="swiper-slide">
                                     <div class="testimonial-item">
-                                        <p>
-                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                            {{$rs->$review}}
-                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                                        </p>
                                         <h3>{{$rs->user->name}}</h3>
                                         <h4>{{$rs->user->created_at}}</h4>
+                                        <p>
+                                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                                            {{$rs->review}}
+                                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                                            <hr>
+                                        </p>
+
                                     </div>
                                 </div><!-- End testimonial item -->
                             @endforeach
