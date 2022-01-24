@@ -60,17 +60,20 @@
                                 $avgrev=\App\Http\Controllers\HomeController::averagereview($data->id);
                                 $countrev=\App\Http\Controllers\HomeController::countreview($data->id);
                             @endphp
-                            <h2>{{$countrev}} Review(s) {{$avgrev}} </h2>
+                            <h2>{{$countrev}} Review(s)  </h2>
                             @foreach($reviews as $rs)
                                 <div class="swiper-slide">
                                     <div class="testimonial-item">
                                         <h3>{{$rs->user->name}}</h3>
+                                        Rate : {{$rs->rate}}/5
                                         <h4>{{$rs->user->created_at}}</h4>
                                         <p>
                                             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                             {{$rs->review}}
                                             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+
                                             <hr>
+
                                         </p>
 
                                     </div>
