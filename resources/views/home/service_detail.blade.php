@@ -52,7 +52,7 @@
                             <ul>
                                 <li><strong>Service</strong>: {{$data->title}}</li>
                                 <li><strong>Keyword</strong>: {{$data->keywords}}</li>
-                                <li><strong>Status</strong>: {{$data->status}}</li>
+                                <li><strong>Detail</strong>: {!! $data->detail !!}</li>
                             </ul>
                         </div>
                         <div class="portfolio-description">

@@ -16,7 +16,7 @@
                                 @foreach($slider as $img)
                                     <div class="swiper-slide">
                                         <img src="{{\Illuminate\Support\Facades\Storage::url($img->image)}}"
-                                            alt="" style="height: auto">
+                                            alt="" style="height: 50%;width: 50%">
                                     </div>
                                 @endforeach
                             </div>
